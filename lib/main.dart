@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:photo_translator/ui/splash/splash_screen.dart';
+import 'package:translator/translator.dart';
 
-void main() {
+Future<void> main() async {
+  final translator = GoogleTranslator();
+
+  // final input = "Здравствуйте. Ты в порядке?";
+  //
+  // translator.translate(input, from: 'ru', to: 'en').then(print);
+  // // prints Hello. Are you okay?
+
+  var translation = await translator.translate("Dart is very cool!", to: 'ru');
+  print(translation);
+  // prints Dart jest bardzo fajny!
+
+  print(await "example".translate(to: 'pt'));
+
   runApp(const MyApp());
 }
 

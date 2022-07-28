@@ -9,18 +9,36 @@ class VerticalyTextImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon),
-        Text(
-          '${text}',
-          textAlign: TextAlign.justify,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-            fontSize: 14,
+
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 60,
+            height: 60,
+            child: Icon(icon,color: Colors.white,),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.blue),
           ),
-          maxLines: 2,
-        )
+        ),
+        Divider(height: 50,),
+        Container(
+          height: 40,
+          color: Colors.blue,
+          child: Row(children: [Expanded(child: Text(
+            '${text}',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontSize: 14,
+            ),
+            maxLines: 2,
+          ))],),
+        ),
+
       ],
     );
   }
