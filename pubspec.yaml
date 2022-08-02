@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   auto_size_text: ^3.0.0
   translator: ^0.1.7
+  language_picker: ^0.4.1
   flutter_launcher_icons:
 flutter_launcher_name:
       name: "Photo Translator"
